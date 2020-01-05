@@ -1,3 +1,8 @@
 # Task-it
 
-Aplikacja do nauki na ścieżce Front-end Developer. Własna interpretacja **To-Do List**, gdzie można dodawać zadania, oznaczać jako wykonane, oraz usuwać.
+It's web application which allows you to manage your tasks!
+
+## Features:
+- [ ] Add new tasks
+- [ ] Mark task as done
+- [ ] Remove finished tasks
