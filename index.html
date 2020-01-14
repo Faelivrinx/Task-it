@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Task It!</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
@@ -23,25 +24,26 @@
     </nav>
     <main>
         <section>
-            <div>
+            <div class="first-container">
                 <h2>Project Example</h2>
-                <button>Edit list</button>
-                <button>Delete List</button>
+                <div>
+                    <button class="edit">Edit list</button>
+                    <button class="delete">Delete List</button></div>
             </div>
-            <div>
-                <input type="text">
-                <button>add task</button>
+            <div class="second-container">
+                <input type="text" placeholder="Enter your new task...">
+                <button class="add">add task</button>
             </div>
-            <ul>
-                <li>
-                    <span></span>
-                    <p></p>
-                    <span></span>
+            <ul class="list-item">
+                <li class="item done">
+                    <span class="item-status">Done</span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <span class="item-action"><i class="material-icons">delete</i></span>
                 </li>
-                <li>
-                    <span></span>
-                    <p></p>
-                    <input type="checkbox" name="" id="">
+                <li class="item">
+                    <span class="item-status">To do</span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    <span class="item-action"><input type="checkbox" name="" id=""></span>
                 </li>
             </ul>
         </section>

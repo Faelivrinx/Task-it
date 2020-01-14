@@ -32,8 +32,7 @@ header div {
     transform: translate(-50%, -50%);
 }
 
-header div p,
-header div h1 {
+header div p, header div h1 {
     font-weight: 300;
     line-height: 50px;
 }
@@ -48,4 +47,133 @@ header div h1 {
 
 main {
     margin-left: 320px;
+}
+
+h2 {
+    font-size: 36px;
+    color: #898989;
+    font-weight: 36px;
+    margin-left: 50px;
+}
+
+button {
+    width: 160px;
+    height: 60px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    text-transform: uppercase;
+}
+
+.edit, .add {
+    background-color: #67BFDA;
+}
+
+.delete {
+    width: 180px;
+    background-color: #F75763;
+}
+
+div input {
+    width: 730px;
+    height: 80px;
+    background-color: #F5F5F5;
+    font-weight: bold;
+    font-size: 18px;
+    color: #959595;
+}
+
+.item.done .item-status {
+    background-color: #44B7AF;
+}
+
+.item .item-action input {
+    width: 28px;
+    height: 28px;
+}
+
+.list-item .item-status {
+    width: 80px;
+    height: 40px;
+    display: inline-block;
+    background-color: #898989;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 20px;
+    /* padding: 5px; */
+    text-transform: uppercase;
+    color: white;
+    line-height: 40px;
+    text-align: center;
+}
+
+.list-item p {
+    color: #898989;
+    font-size: 24px;
+    font-weight: 400;
+    margin-left: 50px;
+}
+
+.item-action {
+    font-size: 24px;
+}
+
+.first-container {
+    display: flex;
+    height: 20vh;
+    align-items: center;
+    align-content: center;
+    border-bottom: 1px #898989 solid;
+}
+
+.first-container div {
+    margin-left: auto;
+    margin-right: 50px;
+}
+
+.edit, .delete {
+    margin: 0 10px;
+}
+
+.second-container {
+    display: flex;
+    padding: 30px 0;
+    align-content: center;
+    align-items: center;
+    border-bottom: 1px #898989 solid;
+}
+
+.second-container .add {
+    margin: 0 60px 0 auto;
+}
+
+.second-container input {
+    margin-left: 50px;
+    border: none;
+}
+
+.list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.material-icons {
+    font-size: 32px;
+    color: #898989;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px #898989 solid;
+    width: 95%;
+}
+
+.item .item-action {
+    margin-left: auto;
+    margin-right: 60px;
 }
