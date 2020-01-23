@@ -8,13 +8,14 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    display: flex;
+}
+
 nav {
     height: 100vh;
-    width: 320px;
+    width: 20%;
     background-color: #333645;
-    position: fixed;
-    top: 0;
-    left: 0;
 }
 
 header {
@@ -46,7 +47,7 @@ header div h1 {
 }
 
 main {
-    margin-left: 320px;
+    flex-grow: 1;
 }
 
 h2 {
@@ -57,31 +58,43 @@ h2 {
 }
 
 button {
-    width: 160px;
-    height: 60px;
+    /* width: 160px;
+    height: 60px; */
     color: white;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     border: none;
     text-transform: uppercase;
+    transition: 2s;
+    padding: 10px 20px;
 }
+
+/* button:hover{
+    width: 165px;
+    height: 65px;
+} */
 
 .edit, .add {
     background-color: #67BFDA;
 }
 
 .delete {
-    width: 180px;
+    /* width: 180px; */
     background-color: #F75763;
 }
 
 div input {
-    width: 730px;
-    height: 80px;
+    flex-grow: 1;
+    margin-right: 50px;
+    height: 70px;
     background-color: #F5F5F5;
     font-weight: bold;
     font-size: 18px;
     color: #959595;
+}
+
+input::placeholder {
+    padding-left: 10px;
 }
 
 .item.done .item-status {
@@ -176,4 +189,72 @@ div input {
 .item .item-action {
     margin-left: auto;
     margin-right: 60px;
+}
+
+@media (max-width:1024px) and (orientation:landscape) {
+    header div p {
+        font-size: 20px;
+    }
+    header div h1 {
+        font-size: 30px
+    }
+    button {
+        font-size: 18px;
+    }
+    h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width:864px) and (orientation:landscape) {
+    header div p {
+        font-size: 18px;
+    }
+    header div h1 {
+        font-size: 28px
+    }
+}
+
+@media (max-width:830px) {
+    nav {
+        width: 0;
+        display: none;
+    }
+    .first-container {
+        flex-direction: column;
+    }
+    .first-container h2 {
+        margin-left: 0;
+        padding: 20px;
+    }
+    .first-container div {
+        margin: 0;
+        display: flex;
+        width: 100%;
+    }
+    .first-container div button {
+        flex-grow: 1;
+        margin: 0 10px;
+    }
+    .edit, .delete{
+        margin:0;
+    }
+}
+
+@media (max-width:673px){
+    .first-container div button{
+        padding-bottom: 12px;
+    }
+    .second-container{
+        flex-direction: column;
+
+    }
+    .second-container .write-task{
+        flex-grow:1;
+        width: 80%;
+    }
+    .second-container .add{
+        margin:10px auto 0 auto;
+        flex-grow: 1;
+    }
 }

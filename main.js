@@ -5,10 +5,12 @@ const ul = document.querySelector("ul");
 let taskId = 0;
 const todoList = [];
 
-const remove = (e, taskId) => {
-    const index = todoList.findIndex(x => x.id == taskId);
-    todoList.splice(index, 1);
+const remove = (e, id) => {
+    console.log("Szukam itemu o id: " + id);
     console.log(todoList);
+    const index = todoList.findIndex(x => x.id == id);
+    todoList.splice(index, 1);
+
     displayTasks();
 }
 
@@ -23,19 +25,22 @@ const addTask = (e) => {
     displayTasks();
 }
 
-const markDone = (e, taskId) => {
-    const index = todoList.findIndex(x => x.id == taskId);
-    todoList[index].complete = true;
-    const parent = e.target.parentNode;
-    e.target.remove();
-    const i = document.createElement('i');
-    i.className = "material-icons";
-    i.textContent = "delete";
-    parent.appendChild(i);
-    parent.parentNode.className = "item done";
-    i.addEventListener("click", function(e){
-        remove(e, taskId);
-    });
+const markDone = (e, id) => {
+    setTimeout(() => {
+        const index = todoList.findIndex(x => x.id == id);
+        todoList[index].complete = true;
+        const parent = e.target.parentNode;
+        e.target.remove();
+        const i = document.createElement('i');
+        i.className = "material-icons";
+        i.textContent = "delete";
+        parent.appendChild(i);
+        parent.parentNode.className = "item done";
+        i.addEventListener("click", function (e) {
+            remove(e, id);
+        });    
+    }, 3000);
+    
 
 }
 const displayTasks = () => {
@@ -56,12 +61,14 @@ const displayTasks = () => {
             i.className = "material-icons";
             i.textContent = "delete";
             actionButton.appendChild(i);
-            i.addEventListener("click",remove);
+            i.addEventListener("click", function (e) {
+                remove(e, taskItem.id);
+            });
         } else {
             const checkbox = document.createElement("input");
             checkbox.className = "done-checkbox";
             checkbox.type = "checkbox";
-            checkbox.addEventListener("change", function(e) {
+            checkbox.addEventListener("change", function (e) {
                 markDone(e, taskItem.id);
             });
             task.className = "item";
@@ -72,7 +79,6 @@ const displayTasks = () => {
         task.appendChild(p);
         task.appendChild(actionButton);
         ul.appendChild(task);
-
     })
     console.log(todoList);
 }
